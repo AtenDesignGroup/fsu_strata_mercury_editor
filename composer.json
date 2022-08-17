@@ -1,5 +1,5 @@
 {
-  "name": "atendesigngroup/fsu_stata_mercury_editor",
+  "name": "atendesigngroup/fsu_strata_mercury_editor",
   "description": "Provides an Enhanced Page with Strata layouts and components.",
   "type": "drupal-module",
   "homepage": "https://bitbucket.org/atendesigngroup/fsu_strata_mercury_editor",
@@ -15,6 +15,7 @@
   ],
   "repositories": [
     {
+      "name": "atendesigngroup/mercury_editor",
       "type": "git",
       "url": "git@bitbucket.org:atendesigngroup/mercury_editor.git"
     }
