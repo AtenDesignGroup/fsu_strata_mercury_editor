@@ -20,6 +20,7 @@ Add the following repos to your list of repositories in `composer.json`
     }
 ],
 ```
+
 Add the following to the list of patches in `composer.json`. Note: This won't be be required once https://www.drupal.org/project/style_options/issues/3288062 has been committed.
 ```
 "patches": {
@@ -28,21 +29,23 @@ Add the following to the list of patches in `composer.json`. Note: This won't be
     }
 }
 ```
+
 Then run the following composer command.
 ```
 composer require atendesigngroup/fsu_strata_mercury_editor:dev-main --with-all-dependencies
 ```
+
 Then install the module as normal.
 ```
 drush en fsu_strata_mercury_editor -y
 ```
 
 ## Configuration
-This module includes the configuration for a content type, few [Paragraphs](https://www.drupal.org/project/paragraphs) and their related fields and image styles which serve as a starting point for creating content. This configuration is located in `/config/optional` and will be automatically imported when the module is installed.
+This module includes the configuration for a content type, a few [Paragraphs](https://www.drupal.org/project/paragraphs) and their related fields and image styles which serve as a starting point for creating content. This configuration is located in the `/config/optional` folder and will be automatically imported when the module is installed.
 
 Due to the nature of Drupal's configuration import system, once the module is installed on a site, you will need to follow the standard site-wide configuration export and import workflow to make edits.
 
-Modifications to the config files in `config/optional` will not override existing configuration can be imported with the following drush command.
+Future modifications to the config files in `config/optional` will not override existing configuration during the normal config import process, but can be imported with the following drush command.
 
 ```
 drush cim -y --partial --source=modules/contrib/fsu_strata_mercury_editor/config/optional
@@ -51,7 +54,7 @@ drush cim -y --partial --source=modules/contrib/fsu_strata_mercury_editor/config
 This module includes the configuration for the `Enhanced Page` content type. This content type includes a Paragraph field called `field_content`. The settings for this field control which Paragraphs are available to content editors when authoring an Enhanced Page.
 
 ## Paragraphs
-This module comes with the configuration for a few basic Paragraphs types – a.k.a Components. See `/admin/structure/paragraphs_type`. At the time of this writing, this module contains two general Paragraph types, `Text` and `Image`, two FSU Strata specific types, `Hero` and `Card` and one Layout Paragraphs type called `Section`.
+This module includes configuration for a few basic Paragraphs types – a.k.a Components. See `/admin/structure/paragraphs_type`. At the time of this writing, this module contains two general Paragraph types, `Text` and `Image`, two FSU Strata specific types, `Hero` and `Card` and one Layout Paragraphs type called `Section`.
 
 The `Section` Paragraph type, which has no fields itself, allows content editors to add a section, or row, to a page and choose a corresponding layout.  Once a `Section` is added, newly created Paragraphs can be added to different regions within the layout of that `Section`. An `Enhanced Page` can contain multiple sections with varied layouts.
 
