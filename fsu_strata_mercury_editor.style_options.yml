@@ -147,20 +147,47 @@ options:
       right:
         label: Right
         class: text-right
+  two_col_ratio:
+    plugin: property
+    label: Column Ratio
+    default: 1_1
+    options:
+      '1_1': '1:1'
+      '1_2': '1:2'
+      '2_1': '2:1'
 
 contexts:
+  layout:
+    _defaults:
+      options:
+        color:
+          layout: true
+          regions: true
+        custom_class:
+          layout: true
+          regions: true
+    two_column:
+      options:
+        two_col_ratio:
+          layout: true
+          regions: false
   paragraphs:
     _defaults:
       options:
         custom_class: true
-        color: true
     image:
       options:
         alignment: true
         image_style: true
+        color: true
+    text:
+      options:
+        text_alignment: true
+        color: true
     card:
       options:
-        color: true
+        color: false
+        color_property: true
         card_layout: true
         card_style: true
         text_alignment: true

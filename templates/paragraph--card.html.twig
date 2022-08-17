@@ -39,8 +39,8 @@
  */
 #}
 {# StyleOption properties. See fsu_strata_mercury_editor.style_options.yml #}
-{% set align = elements['#hero_alignment'] %}
-{% set style = elements['#hero_style'] %}
+{% set layout = elements['#card_layout'] %}
+{% set style = elements['#card_style'] %}
 {% set color = elements['#color_property'] %}
 {%
   set classes = [
@@ -48,12 +48,30 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    's3-p-10'
   ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+    <div class="s3-{{color}}">
+    {% if layout == 'inline' %}
+    <div class="col-xs-12 col-sm-4">
+      {{ content.image_style }}
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      {% if heading %}
+        <{{heading.tag}}>
+        {% if heading.href %}
+        <a href="{{href}}">{{heading.text}}</a>
+        {% else %}
+        {{heading.text}}
+        {% endif %}
+        </{{heading.tag}}>
+      {% endif %}
+      {{ content|without('field_heading', 'field_link', 'field_image', 'image_style') }}
+    </div>
+    {% else %}
+    <div class="s3-p-10 s3-{{color}} feature-fixed">
       {{ content.image_style }}
       {% if heading %}
         <{{heading.tag}}>
@@ -65,6 +83,16 @@
         </{{heading.tag}}>
       {% endif %}
       {{ content|without('field_heading', 'field_link', 'field_image', 'image_style') }}
+    </div>
+    {% endif %}
+    </div>
+    {% if style == 'arrow' %}
+      <img src="/themes/custom/fsu_strata/strata-3.1/_/s3/img/arrow/arrow-{{color}}.png" class="img-responsive hidden-xs" alt="" style="padding: 0;">
+    {% elseif style == 'point' %}
+      <div>
+        <img src="/themes/custom/fsu_strata/strata-3.1/_/s3/img/point/point-{{color}}.png" class="img-responsive hidden-xs" alt="" draggable="false" style="padding: 0;">
+      </div>
+    {% endif %}
     {% endblock %}
   </div>
 {% endblock paragraph %}

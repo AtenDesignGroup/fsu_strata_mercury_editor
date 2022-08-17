@@ -18,20 +18,28 @@
 {%
   set region_classes = []
 %}
+{% set ratio = content['#two_col_ratio'] %}
+{% if ratio == '1_2' %}
+  {% set columns = { primary: '4', secondary: '8' } %}
+{% elseif ratio == '2_1' %}
+  {% set columns = { primary: '8', secondary: '4' } %}
+{% else %}
+  {% set columns = { primary: '6', secondary: '6' } %}
+{% endif %}
 
 {% if content %}
-  <section {{ attributes.addClass(classes) }}>
-    <div class="row">
-      {% if content.primary %}
-        <div {{ region_attributes.primary.addClass(region_classes).addClass('col-xs-12 col-sm-4') }}>
-          {{ content.primary }}
-        </div>
-      {% endif %}
-      {% if content.secondary %}
-        <div {{ region_attributes.secondary.addClass(region_classes).addClass('col-xs-12 col-sm-8') }}>
-          {{ content.secondary }}
-        </div>
-      {% endif %}
-    </div>
-  </section>
+<section {{ attributes.addClass(classes) }}>
+  <div class="row">
+    {% if content.primary %}
+      <div {{ region_attributes.primary.addClass(region_classes).addClass('col-xs-12 col-sm-' ~ columns.primary) }}>
+        {{ content.primary }}
+      </div>
+    {% endif %}
+    {% if content.secondary %}
+      <div {{ region_attributes.secondary.addClass(region_classes).addClass('col-xs-12 col-sm-' ~ columns.secondary) }}>
+        {{ content.secondary }}
+      </div>
+    {% endif %}
+  </div>
+</section>
 {% endif %}
