@@ -19,6 +19,10 @@ function fsu_strata_mercury_editor_install() {
   $content_editor_role = Role::load('content_editor');
   $power_user_role = Role::load('power_user');
 
+  if (empty($content_editor_role) || empty($power_user_role)) {
+    return;
+  }
+
   $content_editor_permissions = [
     'view unpublished paragraphs',
     'create image media',
