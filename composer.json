@@ -1,0 +1,34 @@
+{
+  "name": "atendesigngroup/fsu_stata_mercury_editor",
+  "description": "Provides an Enhanced Page with Strata layouts and components.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/image_widget_crop",
+  "keywords": ["Drupal", "Mercury Editor"],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "John Ferris",
+      "homepage": "https://github.com/pixelwhip",
+      "role": "Maintainer"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "git",
+      "url": "git@bitbucket.org:atendesigngroup/mercury_editor.git"
+  }
+  ],
+  "require": {
+    "atendesigngroup/mercury_editor": "dev-release/1.0.0 as dev-master",
+    "drupal/heading": "^1",
+    "drupal/image_widget_crop": "^2",
+    "drupal/layout_paragraphs": "^2",
+    "drupal/style_options": "^1"
+  }
+}
