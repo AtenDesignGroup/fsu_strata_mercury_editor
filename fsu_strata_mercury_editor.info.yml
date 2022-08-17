@@ -1,4 +1,4 @@
-name: Strata Page
+name: FSU Strata Mercury Editor
 type: module
 description: The description.
 package: Provides an Enhanced Page with Strata layouts and components.
@@ -10,11 +10,13 @@ dependencies:
   - field
   - heading
   - image
+  - image_widget_crop
   - layout_paragraphs
   - link
   - media
   - media_library
   - menu_ui
+  - mercury_editor
   - node
   - paragraphs
   - path
