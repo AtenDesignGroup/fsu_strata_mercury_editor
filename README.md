@@ -20,24 +20,33 @@ Add the following repos to your list of repositories in `composer.json`
     }
 ],
 ```
-Then require the following packages in `composer.json`.
+Add the following to the list of patches in `composer.json`. Note: This won't be be required once https://www.drupal.org/project/style_options/issues/3288062 has been committed.
 ```
-"require": {
-    ...
-    "atendesigngroup/mercury_editor": "dev-release/1.0.0 as dev-master",
-    "atendesigngroup/fsu_strata_mercury_editor": "main as dev-master",
-},
+"patches": {
+    "drupal/style_options": {
+        "CSSClass option plugin fails to build if there are no options defined": "https://git.drupalcode.org/project/style_options/-/merge_requests/2.patch"
+    }
+}
+```
+Then run the following composer command.
+```
+composer require atendesigngroup/fsu_strata_mercury_editor:dev-main --with-all-dependencies
 ```
 Then install the module as normal.
 ```
-drush en mercury_editor fsu_strata_mercury_editor -y
+drush en fsu_strata_mercury_editor -y
 ```
 
 ## Configuration
 This module includes the configuration for a content type, few [Paragraphs](https://www.drupal.org/project/paragraphs) and their related fields and image styles which serve as a starting point for creating content. This configuration is located in `/config/optional` and will be automatically imported when the module is installed.
 
-Due to the nature of Drupal's configuration import system, once the module is installed on a site, you will need to follow the standard site-wide configuration export and import workflow to make edits. Modifications to the config files in `config/optional` will not override existing configuration. However if you _add_ new config files to this folder, the new configuration will be imported if you uninstall and reinstall the module.
+Due to the nature of Drupal's configuration import system, once the module is installed on a site, you will need to follow the standard site-wide configuration export and import workflow to make edits.
 
+Modifications to the config files in `config/optional` will not override existing configuration can be imported with the following drush command.
+
+```
+drush cim -y --partial --source=modules/contrib/fsu_strata_mercury_editor/config/optional
+```
 ## Enhanced Page
 This module includes the configuration for the `Enhanced Page` content type. This content type includes a Paragraph field called `field_content`. The settings for this field control which Paragraphs are available to content editors when authoring an Enhanced Page.
 
