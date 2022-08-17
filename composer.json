@@ -22,7 +22,7 @@
     {
       "type": "git",
       "url": "git@bitbucket.org:atendesigngroup/mercury_editor.git"
-  }
+    }
   ],
   "require": {
     "atendesigngroup/mercury_editor": "dev-release/1.0.0 as dev-master",
