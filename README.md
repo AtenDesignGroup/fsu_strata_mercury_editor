@@ -12,11 +12,11 @@ Add the following repos to your list of repositories in `composer.json`
     ...
     {
         "type": "git",
-        "url": "git@bitbucket.org:atendesigngroup/mercury_editor.git"
+        "url": "https://bitbucket.org/atendesigngroup/mercury_editor.git"
     },
     {
         "type": "git",
-        "url": "git@bitbucket.org:atendesigngroup/fsu_strata_mercury_editor.git"
+        "url": "https://bitbucket.org/atendesigngroup/fsu_strata_mercury_editor.git"
     }
 ],
 ```
