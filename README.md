@@ -25,7 +25,7 @@ Add the following to the list of patches in `composer.json`. Note: This won't be
 ```
 "patches": {
     "drupal/style_options": {
-        "CSSClass option plugin fails to build if there are no options defined": "https://git.drupalcode.org/project/style_options/-/merge_requests/2.patch"
+        "CSSClass option plugin fails to build if there are no options defined": "https://git.drupalcode.org/project/style_options/-/merge_requests/3.patch"
     }
 }
 ```
