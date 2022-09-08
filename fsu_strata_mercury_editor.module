@@ -67,7 +67,7 @@ function fsu_strata_mercury_editor_theme() {
   // in the fsu_strata_mercury_editor/templates folder.
   // @see fsu_strata_mercury_editor/templates/paragraph--hero.html.twig
   $custom_paragraph_templates = [
-    // 'image',
+    'image',
     // 'section',
     // 'text',
     'hero',
