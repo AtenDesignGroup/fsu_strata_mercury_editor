@@ -191,3 +191,8 @@ form.layout-paragraphs-builder-form .js-lpb-component-list {
 .lpb-dialog .js-media-library-item-preview + * {
   margin-top: 1em;
 }
+
+.lpb-enable__wrapper {
+  position: relative;
+  z-index: 10;
+}
