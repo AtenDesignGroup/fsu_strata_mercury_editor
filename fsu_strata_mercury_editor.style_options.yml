@@ -117,6 +117,7 @@ options:
     options:
       none: None
       arrow: Arrow
+      point: Point
   image_style:
     plugin: image_style
     label: Image Style
@@ -186,7 +187,6 @@ contexts:
         color: true
     card:
       options:
-        color: false
         color_property: true
         card_layout: true
         card_style: true
@@ -195,7 +195,6 @@ contexts:
         image_style: true
     hero:
       options:
-        color: false
         color_property: true
         hero_alignment: true
         hero_style: true

@@ -52,6 +52,19 @@
     style == 'arrow' ? 's3-p-10' : 's3-p-0',
   ]
 %}
+{% if style == 'arrow' or style == 'point' %}
+  {%
+    set content_classes = [
+      align == 'left'? 'col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-1' : 'col-sm-5 col-sm-offset-6 col-md-4 col-md-offset-7'
+    ]
+  %}
+{% else %}
+  {%
+    set content_classes = [
+      align == 'left'? 'col-sm-5 col-md-4' : 'col-sm-5 col-sm-offset-7 col-md-4 col-md-offset-8'
+    ]
+  %}
+{% endif %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
@@ -67,7 +80,11 @@
             {% endif %}
           </div>
           {% if style == 'arrow' %}
-          <img src="/themes/custom/fsu_strata/strata-3.1/_/s3/img/arrow/arrow-{{color}}.png" class="img-responsive hidden-xs" alt="">
+            <img src="/themes/custom/fsu_strata/strata-3.1/_/s3/img/arrow/arrow-{{color}}.png" class="img-responsive hidden-xs" alt="" style="padding: 0;">
+          {% elseif style == 'point' %}
+            <div>
+              <img src="/themes/custom/fsu_strata/strata-3.1/_/s3/img/point/point-{{color}}.png" class="img-responsive hidden-xs" alt="" draggable="false" style="padding: 0;">
+            </div>
           {% endif %}
         </div>
       </div>
