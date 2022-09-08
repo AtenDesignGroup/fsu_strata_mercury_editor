@@ -86,11 +86,8 @@ function fsu_strata_mercury_editor_theme() {
 /**
  * Implenents hook_form_FORM_ID_alter().
  */
-function fsu_strata_mercury_editor_form_layout_paragraphs_builder_form_alter(&$form, $form_state) {
-  if (empty($form['#attached']['library'])) {
-    $form['#attached']['library'] = [];
-  }
-  $form['#attached']['library'][] = 'fsu_strata_mercury_editor/mercury_editor';
+function fsu_strata_mercury_editor_preprocess_layout_paragraphs_builder(&$variables) {
+  $variables['#attached']['library'][] = 'fsu_strata_mercury_editor/mercury_editor';
 }
 
 /**

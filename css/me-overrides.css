@@ -103,6 +103,10 @@ form.layout-paragraphs-builder-form .js-lpb-component-list {
   background-repeat: no-repeat;
 }
 
+.lpb-dialog.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+  background-image: none;
+}
+
 .ui-dialog .ui-dialog-content .layout-paragraphs-component-form select {
   appearance: none;
 }
@@ -195,4 +199,8 @@ form.layout-paragraphs-builder-form .js-lpb-component-list {
 .lpb-enable__wrapper {
   position: relative;
   z-index: 10;
+}
+
+.me-is-editable {
+  min-height: 3em;
 }
