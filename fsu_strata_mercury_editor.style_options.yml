@@ -124,7 +124,7 @@ options:
     source: field_image.field_media_image
     default: max_400x400
     options:
-      - 1_1_120x120
+      - 1_1_180x180
       - 3_1_1800x600
       - 3_2_750x500
       - 4_5_400x500

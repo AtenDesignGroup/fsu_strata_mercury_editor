@@ -15,8 +15,6 @@ use Drupal\Core\Ajax\AjaxHelperTrait;
 use Drupal\style_options\StyleOptionStyleTrait;
 use Drupal\style_options\Plugin\StyleOptionPluginBase;
 
-
-
 /**
  * Define the image attribute option plugin.
  *
@@ -32,9 +30,31 @@ class ImageStyle extends StyleOptionPluginBase {
 
   protected function getSource(array $build, string $source) {
     $parts = explode('.', $source);
-    return $build[$parts[0]]['#items']->entity->{$parts[1]}->first();
+
+    if (empty($build[$parts[0]]['#items']) || empty($build[$parts[0]]['#items']->entity)) {
+      return;
+    }
+
+    $entity = $build[$parts[0]]['#items']->entity;
+
+    if (empty($entity->{$parts[1]})) {
+      return;
+    }
+
+    return $entity->{$parts[1]}->first();
   }
 
+  /**
+   * Builds the configuration form.
+   *
+   * @param array $form
+   *   The form array.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The Drupal FormState class.
+   *
+   * @return array
+   *   The complete form render array.
+   */
   public function buildConfigurationForm(
     array $form,
     FormStateInterface $form_state): array {
@@ -88,7 +108,7 @@ class ImageStyle extends StyleOptionPluginBase {
 
     $build[$this->getOptionId()] = [
       '#theme' => 'image_style',
-      '#style_name' => $this->getDefaultValue(),
+      '#style_name' => $value,
       '#uri' => $uri,
       '#width' => $properties['width'],
       '#height' => $properties['height'],
