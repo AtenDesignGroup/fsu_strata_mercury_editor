@@ -50,10 +50,11 @@
     not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
+{{ attach_library('fsu_strata_mercury_editor/image')}}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-    <div class="s3-{{color}}">
+    <div class="s3-{{color}} clearfix {{layout == 'inline' ? 'row'}}">
     {% if layout == 'inline' %}
     <div class="col-xs-12 col-sm-4">
       {{ content.image_style }}

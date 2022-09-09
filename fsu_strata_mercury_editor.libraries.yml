@@ -5,3 +5,7 @@ mercury_editor:
       css/me-overrides.css: {}
   dependencies:
     - core/drupalSettings
+image:
+  css:
+    theme:
+      css/image.css: {}
