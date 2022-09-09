@@ -204,3 +204,8 @@ form.layout-paragraphs-builder-form .js-lpb-component-list {
 .me-is-editable {
   min-height: 3em;
 }
+
+/** Remove the required bg image from seven as it conflicts with Strata */
+.form-required:after {
+  background-image: none !important;
+}
