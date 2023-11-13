@@ -12,22 +12,9 @@ Add the following repos to your list of repositories in `composer.json`
     ...
     {
         "type": "git",
-        "url": "https://bitbucket.org/atendesigngroup/mercury_editor.git"
-    },
-    {
-        "type": "git",
-        "url": "https://bitbucket.org/atendesigngroup/fsu_strata_mercury_editor.git"
+        "url": "https://github.com/AtenDesignGroup/fsu_strata_mercury_editor.git"
     }
 ],
-```
-
-Add the following to the list of patches in `composer.json`. Note: This won't be be required once https://www.drupal.org/project/style_options/issues/3288062 has been committed.
-```
-"patches": {
-    "drupal/style_options": {
-        "CSSClass option plugin fails to build if there are no options defined": "https://git.drupalcode.org/project/style_options/-/merge_requests/3.patch"
-    }
-}
 ```
 
 Then run the following composer command.

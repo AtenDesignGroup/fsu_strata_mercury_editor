@@ -2,7 +2,7 @@
   "name": "atendesigngroup/fsu_strata_mercury_editor",
   "description": "Provides an Enhanced Page with Strata layouts and components.",
   "type": "drupal-module",
-  "homepage": "https://bitbucket.org/atendesigngroup/fsu_strata_mercury_editor",
+  "homepage": "https://github.com/AtenDesignGroup/fsu_strata_mercury_editor",
   "keywords": ["Drupal", "Mercury Editor"],
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
@@ -13,15 +13,8 @@
       "role": "Maintainer"
     }
   ],
-  "repositories": [
-    {
-      "name": "atendesigngroup/mercury_editor",
-      "type": "git",
-      "url": "https://bitbucket.org/atendesigngroup/fsu_strata_mercury_editor.git"
-    }
-  ],
   "require": {
-    "atendesigngroup/mercury_editor": "dev-master#1.0.0",
+    "drupal/mercury_editor": "^2.1@alpha'",
     "drupal/heading": "^1",
     "drupal/image_widget_crop": "^2",
     "drupal/layout_paragraphs": "^2",
